@@ -1,0 +1,76 @@
+:root {
+  color-scheme: light dark;
+  --spinnah-primary: #C94242;
+  --spinnah-secondary: #F6C344;
+  --bg-light: #fafafa;
+  --bg-dark: #0f0f0f;
+  --text-light: #111;
+  --text-dark: #eee;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
+}
+body {
+  margin: 0;
+  background: var(--bg-light);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+@media (prefers-color-scheme: dark) {
+  body { background: var(--bg-dark); color: var(--text-dark); }
+}
+header {
+  text-align: center;
+  padding: 5rem 1rem 2rem;
+}
+.tagline { opacity: 0.8; margin-top: 0.5rem; }
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+.app {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 18px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.app img { width: 80px; margin-bottom: 1rem; }
+.app.highlight { border-color: var(--spinnah-primary); }
+.app.coming-soon { opacity: 0.8; }
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--spinnah-primary);
+  color: white;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .2s;
+}
+.button:hover { background: var(--spinnah-secondary); color: #111; }
+.badge {
+  display: inline-block;
+  background: var(--spinnah-secondary);
+  color: #111;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+footer nav a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.8;
+}
+footer nav a:hover { opacity: 1; text-decoration: underline; }
