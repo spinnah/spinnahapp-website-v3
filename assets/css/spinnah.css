@@ -44,7 +44,7 @@ main {
 /* Add these rules immediately after .app img for clarity */
 .app picture img {
   width: 180px;
-  height: 180px;
+  aspect-ratio: 1 / 1;          /* forces a perfect square */
   border-radius: 22%;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   object-fit: cover;
