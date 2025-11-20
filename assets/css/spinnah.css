@@ -1,13 +1,24 @@
+/* ---------------------------------------------------------
+   Spinnah Global Styles — Clean, Modern, No Conflicts
+   --------------------------------------------------------- */
 :root {
   color-scheme: light dark;
+
   --spinnah-primary: #C94242;
   --spinnah-secondary: #F6C344;
+
   --bg-light: #fafafa;
   --bg-dark: #0f0f0f;
+
   --text-light: #111;
   --text-dark: #eee;
+
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
 }
+
+/* ---------------------------------------------------------
+   Layout + Theme
+   --------------------------------------------------------- */
 body {
   margin: 0;
   background: var(--bg-light);
@@ -16,14 +27,30 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
 @media (prefers-color-scheme: dark) {
-  body { background: var(--bg-dark); color: var(--text-dark); }
+  body {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+  }
 }
+
+/* ---------------------------------------------------------
+   Header
+   --------------------------------------------------------- */
 header {
   text-align: center;
   padding: 5rem 1rem 2rem;
 }
-.tagline { opacity: 0.8; margin-top: 0.5rem; }
+
+.tagline {
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+/* ---------------------------------------------------------
+   App Grid
+   --------------------------------------------------------- */
 main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -32,32 +59,71 @@ main {
   max-width: 1000px;
   margin: auto;
 }
+
+/* ---------------------------------------------------------
+   App Card
+   --------------------------------------------------------- */
 .app {
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 18px;
   padding: 2rem;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform .2s ease;
 }
-.app img { width: 80px; margin-bottom: 1rem; }
 
-/* Add these rules immediately after .app img for clarity */
+.app.highlight {
+  border-color: var(--spinnah-primary);
+}
+
+.app.coming-soon {
+  opacity: 0.85;
+}
+
+/* ---------------------------------------------------------
+   App Icon
+   --------------------------------------------------------- */
 .app picture img {
   width: 180px;
-  aspect-ratio: 1 / 1;          /* forces a perfect square */
+  aspect-ratio: 1 / 1;
   border-radius: 22%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   object-fit: cover;
-  background: transparent;
   margin-bottom: 1rem;
+
+  /* subtle glow like Apple marketing */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   transition: transform .25s ease;
 }
+
 .app picture img:hover {
   transform: scale(1.03);
 }
 
-.app.highlight { border-color: var(--spinnah-primary); }
-.app.coming-soon { opacity: 0.8; }
+/* ---------------------------------------------------------
+   App Title Links — NO BLUE, NO PURPLE
+   --------------------------------------------------------- */
+.app h2 {
+  margin: 0.5rem 0 1rem;
+}
+
+.app h2 a {
+  color: inherit;            /* no ugly link colors */
+  text-decoration: none;     /* no underline */
+  font-weight: 600;
+  transition: opacity .2s ease;
+}
+
+.app h2 a:hover {
+  opacity: 0.7;
+}
+
+.app h2 a:visited {
+  color: inherit;  /* NO PURPLE EVER */
+}
+
+/* ---------------------------------------------------------
+   Buttons & Badges
+   --------------------------------------------------------- */
 .button {
   display: inline-block;
   margin-top: 1rem;
@@ -66,27 +132,43 @@ main {
   color: white;
   border-radius: 999px;
   text-decoration: none;
-  transition: background .2s;
+  transition: background .2s ease;
+  font-weight: 600;
 }
-.button:hover { background: var(--spinnah-secondary); color: #111; }
+
+.button:hover {
+  background: var(--spinnah-secondary);
+  color: #111;
+}
+
 .badge {
   display: inline-block;
   background: var(--spinnah-secondary);
   color: #111;
-  padding: 0.4rem 0.8rem;
+  padding: 0.45rem 0.9rem;
   border-radius: 999px;
   font-weight: 600;
+  margin-top: 1rem;
 }
+
+/* ---------------------------------------------------------
+   Footer
+   --------------------------------------------------------- */
 footer {
   margin-top: auto;
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.9rem;
+  opacity: 0.8;
 }
+
 footer nav a {
   margin: 0 0.5rem;
   text-decoration: none;
   color: inherit;
-  opacity: 0.8;
 }
-footer nav a:hover { opacity: 1; text-decoration: underline; }
+
+footer nav a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}

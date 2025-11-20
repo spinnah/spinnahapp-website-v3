@@ -1,60 +1,104 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Spinnah – Apps for Creative Flow</title>
-<link rel="stylesheet" href="assets/css/spinnah.css">
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Spinnah – Apps for Creative Flow</title>
+  <link rel="stylesheet" href="assets/css/spinnah.css">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-<body>
-  <header>
-    <h1>Spinnah</h1>
-    <p class="tagline">Apps built for creative flow.</p>
-  </header>
+  <body>
+    <header>
+      <h1>Spinnah</h1>
+      <p class="tagline">Apps built for creative flow.</p>
 
-  <main>
-    <!-- RankSpinnah -->
-    <section class="app highlight">
-      <picture>
-        <!-- Light mode uses dark icon -->
-        <source srcset="https://rank.spinnah.app/assets/img/rankspinnah-appicon-dark.png"
-                media="(prefers-color-scheme: light)">
-        <!-- Dark mode uses light/default icon -->
-        <source srcset="https://rank.spinnah.app/assets/img/rankspinnah-appicon-default.png"
-                media="(prefers-color-scheme: dark)">
-        <img src="https://rank.spinnah.app/assets/img/rankspinnah-appicon-dark.png"
-             alt="RankSpinnah app icon" width="180" height="180">
-      </picture>
-      <h2><a href="https://rank.spinnah.app">RankSpinnah</a></h2>
-      <p>Build, rank, and share your favorite lists across iPhone, iPad, and Mac.</p>
-      <a class="button" href="https://rank.spinnah.app">Available Now</a>
-    </section>
+      <!-- Short Philosophy Blurb -->
+      <p class="tagline" style="max-width: 680px; margin: 1rem auto 0; line-height: 1.45;">
+        Native apps. No subscriptions. No ads. No nonsense. If a Spinnah app ever expands from iOS to macOS (or vice-versa), you’re already covered — no second purchase.
+      </p>
+    </header>
 
-    <!-- ComicSpinnah -->
-    <section class="app coming-soon">
-      <picture>
-        <!-- Light mode uses dark icon -->
-        <source srcset="https://comic.spinnah.app/assets/img/comicspinnah-appicon-dark.png"
-                media="(prefers-color-scheme: light)">
-        <!-- Dark mode uses light/default icon -->
-        <source srcset="https://comic.spinnah.app/assets/img/comicspinnah-appicon-default.png"
-                media="(prefers-color-scheme: dark)">
-        <img src="https://comic.spinnah.app/assets/img/comicspinnah-appicon-dark.png"
-             alt="ComicSpinnah app icon" width="180" height="180">
-      </picture>
-      <h2><a href="https://comic.spinnah.app">ComicSpinnah</a></h2>
-      <p>Coming soon — a powerful, elegant comic library for collectors and storytellers.</p>
-      <span class="badge">Coming Soon</span>
-    </section>
-  </main>
+    <main>
+      <!-- RankSpinnah -->
+      <section class="app highlight">
+        <a href="https://rank.spinnah.app" class="app-icon-link">
+          <picture>
+            <!-- Light mode uses dark icon -->
+            <source
+              srcset="https://rank.spinnah.app/assets/img/rankspinnah-appicon-dark.png"
+              media="(prefers-color-scheme: light)"
+            >
+            <!-- Dark mode uses light/default icon -->
+            <source
+              srcset="https://rank.spinnah.app/assets/img/rankspinnah-appicon-default.png"
+              media="(prefers-color-scheme: dark)"
+            >
+            <img
+              src="https://rank.spinnah.app/assets/img/rankspinnah-appicon-dark.png"
+              alt="RankSpinnah app icon"
+              width="180"
+              height="180"
+            >
+          </picture>
+        </a>
 
-  <footer>
-    <p>© 2025 Spinnah. Published by ShastLeLow.</p>
-    <nav>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/support.html">Support</a>
-      <a href="mailto:info@spinnah.app">Contact</a>
-    </nav>
-  </footer>
-</body>
+        <h2 class="app-title">
+          <a href="https://rank.spinnah.app">RankSpinnah</a>
+        </h2>
+        <p>Build, rank, and share your favorite lists across iPhone, iPad, and Mac.</p>
+
+        <div class="app-cta">
+          <a
+            href="https://apps.apple.com/us/app/rankspinnah/id6755204410?itscg=30200&amp;itsct=apps_box_link"
+            class="app-store-link"
+          >
+            <img
+              src="assets/img/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+              alt="Download RankSpinnah on the App Store"
+              width="180"
+              height="60"
+            >
+          </a>
+        </div>
+      </section>
+
+      <!-- ComicSpinnah -->
+      <section class="app coming-soon">
+        <a href="https://comic.spinnah.app" class="app-icon-link">
+          <picture>
+            <!-- Light mode uses dark icon -->
+            <source
+              srcset="https://comic.spinnah.app/assets/img/comicspinnah-appicon-dark.png"
+              media="(prefers-color-scheme: light)"
+            >
+            <!-- Dark mode uses light/default icon -->
+            <source
+              srcset="https://comic.spinnah.app/assets/img/comicspinnah-appicon-default.png"
+              media="(prefers-color-scheme: dark)"
+            >
+            <img
+              src="https://comic.spinnah.app/assets/img/comicspinnah-appicon-dark.png"
+              alt="ComicSpinnah app icon"
+              width="180"
+              height="180"
+            >
+          </picture>
+        </a>
+
+        <h2 class="app-title">
+          <a href="https://comic.spinnah.app">ComicSpinnah</a>
+        </h2>
+        <p>Coming soon — a powerful, elegant comic library for collectors and storytellers.</p>
+        <span class="badge">Coming Soon</span>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Spinnah. Published by ShastLeLow.</p>
+      <nav>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/support.html">Support</a>
+        <a href="mailto:info@spinnah.app">Contact</a>
+      </nav>
+    </footer>
+  </body>
 </html>
