@@ -13,6 +13,15 @@
   --text-light: #111;
   --text-dark: #eee;
 
+  /* Global nav tokens */
+  --spinnah-nav-height: 44px;
+  --spinnah-nav-bg-light: rgba(250, 250, 250, 0.94);
+  --spinnah-nav-bg-dark: rgba(15, 15, 15, 0.94);
+  --spinnah-nav-border-light: rgba(0, 0, 0, 0.08);
+  --spinnah-nav-border-dark: rgba(255, 255, 255, 0.12);
+  --spinnah-nav-text-light: var(--text-light);
+  --spinnah-nav-text-dark: var(--text-dark);
+
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
 }
 
@@ -33,10 +42,238 @@ body {
     background: var(--bg-dark);
     color: var(--text-dark);
   }
+
+  :root {
+    --spinnah-nav-bg-light: rgba(250, 250, 250, 0.94); /* keep defined for completeness */
+    --spinnah-nav-bg-dark: rgba(15, 15, 15, 0.94);
+    --spinnah-nav-border-light: rgba(0, 0, 0, 0.08);
+    --spinnah-nav-border-dark: rgba(255, 255, 255, 0.12);
+    --spinnah-nav-text-light: var(--text-light);
+    --spinnah-nav-text-dark: var(--text-dark);
+  }
 }
 
 /* ---------------------------------------------------------
-   Header
+   Global Nav (Apple-style)
+   --------------------------------------------------------- */
+
+.spinnah-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  height: var(--spinnah-nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--spinnah-nav-bg-light);
+  color: var(--spinnah-nav-text-light);
+  border-bottom: 1px solid var(--spinnah-nav-border-light);
+
+  font-size: 13px;
+  line-height: 1;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+/* Solid nav variant (default for most pages) */
+.spinnah-nav--solid {
+  /* base styles already apply from .spinnah-nav */
+}
+
+/* Dynamic variant (product pages) */
+.spinnah-nav--dynamic.spinnah-nav--transparent {
+  background-color: transparent;
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+/* When scrolled, dynamic nav becomes solid */
+.spinnah-nav--dynamic.spinnah-nav--scrolled {
+  background-color: var(--spinnah-nav-bg-light);
+  border-bottom: 1px solid var(--spinnah-nav-border-light);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+/* Dark mode overrides for nav */
+@media (prefers-color-scheme: dark) {
+  .spinnah-nav {
+    background-color: var(--spinnah-nav-bg-dark);
+    color: var(--spinnah-nav-text-dark);
+    border-bottom: 1px solid var(--spinnah-nav-border-dark);
+  }
+
+  .spinnah-nav--dynamic.spinnah-nav--transparent {
+    background-color: transparent;
+    border-bottom-color: transparent;
+    box-shadow: none;
+  }
+
+  .spinnah-nav--dynamic.spinnah-nav--scrolled {
+    background-color: var(--spinnah-nav-bg-dark);
+    border-bottom: 1px solid var(--spinnah-nav-border-dark);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Nav inner layout */
+.spinnah-nav__inner {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand (logo + text) */
+.spinnah-nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+.spinnah-nav__logo {
+  display: block;
+  height: 18px;
+  width: auto;
+}
+
+/* Default: use light logo, hide dark */
+.spinnah-nav__logo--dark {
+  display: none;
+}
+
+/* Dark mode: swap logos */
+@media (prefers-color-scheme: dark) {
+  .spinnah-nav__logo--light {
+    display: none;
+  }
+  .spinnah-nav__logo--dark {
+    display: block;
+  }
+}
+
+.spinnah-nav__brand-text {
+  letter-spacing: 0.01em;
+}
+
+/* Desktop link groups */
+.spinnah-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.spinnah-nav__link {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.8;
+  transition: opacity 150ms ease;
+  white-space: nowrap;
+}
+
+.spinnah-nav__link:hover,
+.spinnah-nav__link:focus-visible {
+  opacity: 1;
+}
+
+/* Mobile toggle button (hidden by default on desktop) */
+.spinnah-nav__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: inherit;
+}
+
+.spinnah-nav__toggle-line {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  border-radius: 999px;
+  background-color: currentColor;
+}
+
+.spinnah-nav__toggle-line:first-child {
+  margin-bottom: 4px;
+}
+
+/* Mobile menu panel */
+.spinnah-nav__menu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--spinnah-nav-height);
+
+  background-color: var(--spinnah-nav-bg-light);
+  border-bottom: 1px solid var(--spinnah-nav-border-light);
+
+  padding: 0.25rem 0;
+  display: none;
+}
+
+/* Show menu when nav has menu-open modifier */
+.spinnah-nav--menu-open .spinnah-nav__menu {
+  display: block;
+}
+
+/* Dark mode for mobile menu */
+@media (prefers-color-scheme: dark) {
+  .spinnah-nav__menu {
+    background-color: var(--spinnah-nav-bg-dark);
+    border-bottom: 1px solid var(--spinnah-nav-border-dark);
+  }
+}
+
+.spinnah-nav__menu-item {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.spinnah-nav__menu-item:hover,
+.spinnah-nav__menu-item:focus-visible {
+  opacity: 1;
+}
+
+/* Focus styles */
+.spinnah-nav a:focus-visible,
+.spinnah-nav__toggle:focus-visible,
+.spinnah-nav__menu-item:focus-visible {
+  outline: 2px solid rgba(201, 66, 66, 0.6);
+  outline-offset: 3px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .spinnah-nav--dynamic.spinnah-nav--scrolled {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------
+   Header (page hero, not nav)
    --------------------------------------------------------- */
 header {
   text-align: center;
@@ -171,4 +408,22 @@ footer nav a {
 footer nav a:hover {
   opacity: 1;
   text-decoration: underline;
+}
+
+/* ---------------------------------------------------------
+   Responsive tweaks
+   --------------------------------------------------------- */
+@media (max-width: 800px) {
+  .spinnah-nav__inner {
+    padding: 0 1rem;
+  }
+
+  .spinnah-nav__links--center,
+  .spinnah-nav__links--right {
+    display: none;
+  }
+
+  .spinnah-nav__toggle {
+    display: inline-flex;
+  }
 }

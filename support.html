@@ -1,73 +1,166 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Support – Spinnah</title>
-<link rel="stylesheet" href="assets/css/spinnah.css">
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Support – Spinnah</title>
+    <link rel="stylesheet" href="assets/css/spinnah.css">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  </head>
 
-<body>
-  <header>
-    <h1>Support</h1>
-    <p class="tagline">We’re here to help.</p>
-  </header>
+  <body>
+    <!-- Global Spinnah Navigation -->
+    <nav class="spinnah-nav spinnah-nav--solid" aria-label="Spinnah global navigation">
+      <div class="spinnah-nav__inner">
 
-  <main style="max-width: 720px; margin: 2rem auto; padding: 0 1.25rem; line-height: 1.6;">
-    <section>
-      <h2>Getting Help</h2>
-      <p>
-        If you’re having trouble with RankSpinnah or have questions about upcoming apps like ComicSpinnah,
-        we’re happy to help. Spinnah is a one-person studio, so responses are personal, not automated.
-      </p>
-    </section>
+        <!-- Brand: Logo + Spinnah text -->
+        <a href="https://spinnah.app" class="spinnah-nav__brand">
+          <!-- Light-mode logo -->
+          <img
+            src="assets/img/spinnah-appicon-default.png"
+            alt="Spinnah"
+            class="spinnah-nav__logo spinnah-nav__logo--light"
+          >
+          <!-- Dark-mode logo -->
+          <img
+            src="assets/img/spinnah-appicon-dark.png"
+            alt="Spinnah"
+            class="spinnah-nav__logo spinnah-nav__logo--dark"
+          >
+          <span class="spinnah-nav__brand-text">Spinnah</span>
+        </a>
 
-    <section>
-      <h2>Contact Channels</h2>
-      <p>You can reach out using any of the following:</p>
-      <ul>
-        <li>Email: <a href="mailto:info@spinnah.app">info@spinnah.app</a></li>
-        <li>Twitter / X: <a href="https://twitter.com/ShastLeLow">@ShastLeLow</a></li>
-        <li>GitHub: <a href="https://github.com/spinnah">github.com/spinnah</a></li>
-      </ul>
-      <p>
-        Typical response time is within 1–2 business days, though during busy release windows it may take a bit longer.
-      </p>
-    </section>
+        <!-- Desktop: Center app links -->
+        <div class="spinnah-nav__links spinnah-nav__links--center">
+          <a href="https://comic.spinnah.app" class="spinnah-nav__link">ComicSpinnah</a>
+          <a href="https://rank.spinnah.app" class="spinnah-nav__link">RankSpinnah</a>
+        </div>
 
-    <section>
-      <h2>Reporting a Bug</h2>
-      <p>
-        When reporting a bug, it helps a lot if you can include:
-      </p>
-      <ul>
-        <li>Which app and platform (e.g., RankSpinnah on macOS 15, iOS 18, etc.)</li>
-        <li>What you were trying to do</li>
-        <li>What you expected to happen</li>
-        <li>What actually happened (including any error messages)</li>
-        <li>Screenshots if you’re comfortable sharing them</li>
-      </ul>
-    </section>
+        <!-- Desktop: Right-side utility links -->
+        <div class="spinnah-nav__links spinnah-nav__links--right">
+          <a href="https://spinnah.app/philosophy" class="spinnah-nav__link">Philosophy</a>
+          <a href="https://spinnah.app/support" class="spinnah-nav__link">Support</a>
+        </div>
 
-    <section>
-      <h2>Feature Requests</h2>
-      <p>
-        Have an idea that would make a Spinnah app more useful, more fun, or just less annoying?
-        Send it along — real-world usage is a big part of how future updates are prioritized.
-      </p>
-      <p>
-        While not every request can make it into the apps, thoughtful feedback is always appreciated.
-      </p>
-    </section>
-  </main>
+        <!-- Mobile: Hamburger toggle -->
+        <button
+          class="spinnah-nav__toggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="spinnah-nav-menu"
+        >
+          <span class="spinnah-nav__toggle-line"></span>
+          <span class="spinnah-nav__toggle-line"></span>
+        </button>
+      </div>
 
-  <footer>
-    <p>© 2025 Spinnah. Published by ShastLeLow.</p>
-    <nav>
-      <a href="/philosophy.html">Philosophy</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/support.html">Support</a>
-      <a href="mailto:info@spinnah.app">Contact</a>
+      <!-- Mobile: Slide-down menu -->
+      <div id="spinnah-nav-menu" class="spinnah-nav__menu" hidden>
+        <a href="https://spinnah.app" class="spinnah-nav__menu-item">Spinnah Home</a>
+        <a href="https://comic.spinnah.app" class="spinnah-nav__menu-item">ComicSpinnah</a>
+        <a href="https://rank.spinnah.app" class="spinnah-nav__menu-item">RankSpinnah</a>
+        <a href="https://spinnah.app/philosophy" class="spinnah-nav__menu-item">Philosophy</a>
+        <a href="https://spinnah.app/support" class="spinnah-nav__menu-item">Support</a>
+      </div>
     </nav>
-  </footer>
-</body>
+
+    <header>
+      <h1>Support</h1>
+      <p class="tagline">We’re here to help.</p>
+    </header>
+
+    <main style="max-width: 720px; margin: 2rem auto; padding: 0 1.25rem; line-height: 1.6;">
+      <section>
+        <h2>Getting Help</h2>
+        <p>
+          If you’re having trouble with RankSpinnah or have questions about upcoming apps like ComicSpinnah,
+          we’re happy to help. Spinnah is a one-person studio, so responses are personal, not automated.
+        </p>
+      </section>
+
+      <section>
+        <h2>Contact Channels</h2>
+        <p>You can reach out using any of the following:</p>
+        <ul>
+          <li>Email: <a href="mailto:info@spinnah.app">info@spinnah.app</a></li>
+          <li>Twitter / X: <a href="https://twitter.com/ShastLeLow">@ShastLeLow</a></li>
+          <li>GitHub: <a href="https://github.com/spinnah">github.com/spinnah</a></li>
+        </ul>
+        <p>
+          Typical response time is within 1–2 business days, though during busy release windows it may take a bit longer.
+        </p>
+      </section>
+
+      <section>
+        <h2>Reporting a Bug</h2>
+        <p>When reporting a bug, it helps a lot if you can include:</p>
+        <ul>
+          <li>Which app and platform (e.g., RankSpinnah on macOS 15, iOS 18, etc.)</li>
+          <li>What you were trying to do</li>
+          <li>What you expected to happen</li>
+          <li>What actually happened (including any error messages)</li>
+          <li>Screenshots if you’re comfortable sharing them</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Feature Requests</h2>
+        <p>
+          Have an idea that would make a Spinnah app more useful, more fun, or just less annoying?
+          Send it along — real-world usage is a big part of how future updates are prioritized.
+        </p>
+        <p>
+          While not every request can make it into the apps, thoughtful feedback is always appreciated.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Spinnah. Published by ShastLeLow.</p>
+      <nav>
+        <a href="/philosophy.html">Philosophy</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/support.html">Support</a>
+        <a href="mailto:info@spinnah.app">Contact</a>
+      </nav>
+    </footer>
+
+    <!-- Lightweight JS for nav toggle + dynamic behavior hooks -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const nav = document.querySelector('.spinnah-nav');
+        if (!nav) return;
+
+        const toggle = nav.querySelector('.spinnah-nav__toggle');
+        const menu = document.getElementById('spinnah-nav-menu');
+
+        // Mobile menu toggle
+        if (toggle && menu) {
+          toggle.addEventListener('click', function () {
+            const isOpen = nav.classList.toggle('spinnah-nav--menu-open');
+            toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            if (isOpen) menu.removeAttribute('hidden');
+            else menu.setAttribute('hidden', '');
+          });
+        }
+
+        // Dynamic transparent -> solid behavior (not used on this page)
+        if (nav.classList.contains('spinnah-nav--dynamic')) {
+          const scrollThreshold = 40;
+          const onScroll = function () {
+            if (window.scrollY > scrollThreshold) {
+              nav.classList.add('spinnah-nav--scrolled');
+              nav.classList.remove('spinnah-nav--transparent');
+            } else {
+              nav.classList.remove('spinnah-nav--scrolled');
+              nav.classList.add('spinnah-nav--transparent');
+            }
+          };
+          onScroll();
+          window.addEventListener('scroll', onScroll, { passive: true });
+        }
+      });
+    </script>
+  </body>
 </html>
